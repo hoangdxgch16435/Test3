@@ -1,7 +1,7 @@
 <?php 
 class DBConnector{
 	public $host = 'localhost';
-	public $dbname = 'asmt';
+	public $dbname = 'hoang';
 	public $un = 'root';
 	public $pw = '';
 	
