@@ -1,0 +1,185 @@
+* {
+			box-sizing: border-box;
+		}
+.row:after {
+			content: "";
+			clear: both;
+			display: table;
+		}
+
+		[class*="col-"]{
+			float: left;
+		}
+
+		.col-1 {width: 8.33%;}
+		.col-2 {width: 16.66%;}
+		.col-3 {width: 25%;}
+		.col-4 {width: 33.33%;}
+		.col-5 {width: 41.66%;}
+		.col-6 {width: 50%;}
+		.col-7 {width: 58.33%;}
+		.col-8 {width: 66.66%;}
+		.col-9 {width: 75%;}
+		.col-10 {width: 83.33%;}
+		.col-11 {width: 91.66%;}
+		.col-12 {width: 100%;}
+body {
+	width: 1000px;
+	margin: 0px auto;
+	background: white;
+}
+
+#main {
+	margin-top: 20px;
+}
+
+#menu_top {
+	background: #141414;
+	height: 100px;
+	margin: 0px;
+	padding: 0px;
+}
+
+#banner {
+	height: auto;
+	width: auto;
+}
+
+#main #vest {
+	width: auto;
+	height: auto;
+	float: left;
+}
+
+#main #belt {
+	width: auto;
+	height: auto;
+	float: left;
+}
+
+#footer {
+	background: #000;
+	width: 1000px;
+	text-align: center;
+	height: 100px;
+	color: #FFF;
+	margin: 0px;
+	padding-top: 30px;
+	float: left;
+}
+
+#menu_top #MWS {
+	width: 200px;
+	float: left;
+	color: #FFF;
+	text-align: center;
+	text-decoration: none;
+	line-height: 100px;
+}
+
+#menu_top #menu {
+	width: 600px;
+	float: left;
+}
+
+#menu_top #help {
+	width: 200px;
+	float: left;
+	color: #FFF;
+	text-align: center;
+	line-height: 100px;
+}
+
+#menu_top #menu ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+#menu_top #menu ul li {
+	list-style: none;
+	float: left;
+}
+
+#menu_top #menu ul li a {
+	text-decoration: none;
+	display: block;
+	line-height: 100px;
+	color: #FFF;
+	padding: 0px 20px 0px 20px;
+}
+
+#main #vest h2 {
+	text-align: center;
+}
+
+#main #vest img {
+	padding: 0px 20px 0px 20px;
+	text-align: center;
+}
+
+#main #belt h2 {
+	text-align: center;
+}
+
+#main #belt img {
+	padding: 0px 20px 0px 20px;
+}
+
+#main h3 {
+	text-align: center;
+}
+
+.introduce {
+	float: left;
+	margin-top: 20px;
+}
+
+.introduce ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+.introduce ul li {
+	list-style: none;
+	clear: left;
+	float: left;
+	border-bottom: 2px;
+	margin-bottom: 20px;
+}
+.introduce ul li img {
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 20px;
+}
+
+#detail .buy {
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+#payment .cf {
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+#product {
+	margin-top: 20px;
+}
+
+#product .category ul li {
+	list-style: none;
+	border: 1px solid #ccc;
+}
+
+#product .category ul {
+	margin-right: 30px;
+}
+
+#product .category ul li a {
+	text-decoration: none;
+	display: block;
+}
+
+#detail img {
+	border: 2px solid gray;
+}
