@@ -1,35 +1,13 @@
-<?php 
-class DBConnector{
-	public $host = 'localhost';
-	public $dbname = 'hoang';
-	public $un = 'root';
-	public $pw = '';
-	
-	public function runQuery($sql)
-	{
-		$conn = new mysqli($this->host, $this->un, $this->pw, $this->dbname);
-		mysqli_set_charset($conn, 'UTF8');
-		$result = $conn->query($sql);
-		$rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
-		$conn->close();
-		return $rows;
-	}
-	public function execStatement($sql)
-	{
-		$conn = new mysqli($this->host, $this->un, $this->pw, $this->dbname);
-		$result = $conn->query($sql);
-		$conn->close();
-		return $result;
-	}
-	public function execQuery($sql, $numparam, $param)
-	{
-		$conn = new mysqli($this->host, $this->un, $this->pw, $this->dbname);
-		$stm = $conn->prepare($sql);
-		$stm->bind_param($numparam, $param);
-		$stm->execute();
-		$stm->close();
-		$conn->close();
-	}
-}
-
-?>
+<?php  
+		$db = parse_url(getenv("DATABASE_URL"));
+		$pdo = new PDO("pgsql:" . sprintf(
+		    "host=%s;port=%s;user=%s;password=%s;dbname=%s",
+		    $db["host"],
+		    $db["port"],
+		    $db["user"],
+		    $db["pass"],
+		    ltrim($db["path"], "/")
+		));
+		
+		echo "done";		
+	?>
