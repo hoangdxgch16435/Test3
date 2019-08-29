@@ -1,7 +1,35 @@
-<?php
+<?php 
+class DBConnector{
+	public $host = 'localhost';
+	public $dbname = 'asmt';
+	public $un = 'root';
+	public $pw = '';
+	
+	public function runQuery($sql)
+	{
+		$conn = new mysqli($this->host, $this->un, $this->pw, $this->dbname);
+		mysqli_set_charset($conn, 'UTF8');
+		$result = $conn->query($sql);
+		$rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+		$conn->close();
+		return $rows;
+	}
+	public function execStatement($sql)
+	{
+		$conn = new mysqli($this->host, $this->un, $this->pw, $this->dbname);
+		$result = $conn->query($sql);
+		$conn->close();
+		return $result;
+	}
+	public function execQuery($sql, $numparam, $param)
+	{
+		$conn = new mysqli($this->host, $this->un, $this->pw, $this->dbname);
+		$stm = $conn->prepare($sql);
+		$stm->bind_param($numparam, $param);
+		$stm->execute();
+		$stm->close();
+		$conn->close();
+	}
+}
 
-$connection = pg_connect("host=ec2-54-197-234-117.compute-1.amazonaws.com port=5432 dbname=d9d0847k2d7foi user=cpswmthrtfyytc password=dbc2e563241035e26679e4938a872f606e46b0e2a96c11fbfd764a92487acb8d");  
- if(!$connection) {
-     die("Database connection failed");
- }
- ?>
+?>
